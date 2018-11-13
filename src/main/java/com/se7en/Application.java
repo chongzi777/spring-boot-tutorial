@@ -1,6 +1,7 @@
 package com.se7en;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -10,6 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @VERSION 1.0
  */
 @SpringBootApplication
+@EnableAutoConfiguration(exclude = {
+        // 是否启动权限验证
+        // org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
+})
 public class Application {
 
   public static void main(String[] args) {
